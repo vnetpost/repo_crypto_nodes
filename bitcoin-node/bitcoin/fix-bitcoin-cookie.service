@@ -1,0 +1,10 @@
+[Unit]
+Description=Fix Bitcoin .cookie permission
+After=bitcoind.service
+
+[Service]
+Type=oneshot
+ExecStart=/mnt/nvme-4tb/bitcoin/fix-bitcoin-cookie.sh
+
+[Install]
+WantedBy=bitcoind.service
