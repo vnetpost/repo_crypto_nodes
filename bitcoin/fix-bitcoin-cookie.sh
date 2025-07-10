@@ -9,6 +9,6 @@ done
 
 # Cookie-Berechtigung ändern
 chown bitcoin:bitcoin "$COOKIE"
-chmod 640 "$COOKIE"
+chmod 644 "$COOKIE"
 
 exit 0
