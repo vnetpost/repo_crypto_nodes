@@ -1,23 +1,23 @@
-# Electrs Konfigurationsdatei: /mnt/nvme-4tb/electrs/config.toml
+# Path: /mnt/nvme-4tb/electrs/config.toml
+# Electrs-romanz v0.10.10 Konfiguration
+network = "bitcoin"
 
-# Bitcoin Core RPC-Einstellungen
-network = "bitcoin"           # Setze dies auf "testnet", "signet" oder "regtest" falls zutreffend
-daemon_rpc_addr = "127.0.0.1:8332" # Bitcoin Core RPC-Adresse (lokal auf dem Pi)
-# Der Pfad zum .cookie-File von Bitcoin Core. Electrs nutzt dies zur Authentifizierung.
+# Bitcoin Core Verbindung
+daemon_rpc_addr = "127.0.0.1:8332"
+daemon_p2p_addr = "127.0.0.1:8333"
 cookie_file = "/mnt/nvme-4tb/bitcoin/.cookie"
 
-# Electrum RPC-Server Einstellungen
-electrum_rpc_addr = "0.0.0.0:50001" # Standard Electrum TCP Port (unverschlüsselt)
+# Electrs Server
+electrum_rpc_addr = "0.0.0.0:50001"
+monitoring_addr = "127.0.0.1:4224"
 
-# SSL/TLS Einstellungen - NEU!
-#ssl_cert_path = "/mnt/nvme-4tb/electrs/ssl/cert.pem"
-#ssl_key_path = "/mnt/nvme-4tb/electrs/ssl/key.pem"
+# Datenbank
+db_dir = "/mnt/nvme-4tb/electrs/db"
 
-# Pfad zur Electrs-Datenbank (wo die Indizes gespeichert werden)
-db_dir = "/mnt/nvme-4tb/electrs/db" # Hier werden die Indizes auf deiner NVMe gespeichert
+# Performance
+index_batch_size = 100
+jsonrpc_timeout = "60s"
+wait_duration = "30s"
 
-# HTTP RPC Port für Monitoring und Mempool.space (lokaler Zugriff)
-http_rpc_addr = "127.0.0.1:4224"
-
-# Logging-Einstellungen
-log_filters = "INFO"
+# Logging
+log_filters = "electrs=INFO"
