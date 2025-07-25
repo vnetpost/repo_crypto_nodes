@@ -21,7 +21,7 @@ ProtectSystem=full
 ProtectHome=true
 PrivateTmp=false
 # ReadWritePaths muss das electrs Datenverzeichnis und auch das bitcoin Datenverzeichnis enthalten.
-ReadWritePaths=/mnt/nvme-4tb/electrs /mnt/nvme-4tb/bitcoin
+ReadWritePaths=/mnt/nvme-4tb/electrs /mnt/nvme-4tb/bitcoin /home/bitcoin
 
 Restart=on-failure
 RestartSec=10s
