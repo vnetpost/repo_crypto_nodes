@@ -1,0 +1,12 @@
+# /etc/systemd/system/fan_and_buzzer.service
+[Unit]
+Description=PWM-Lüfter und Buzzer Steuerung
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin//fan_and_buzzer.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
