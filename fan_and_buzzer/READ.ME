@@ -1,0 +1,29 @@
+# Raspberry Pi 5: PWM-Lüfter und Buzzer-Steuerung
+
+Dieses Projekt steuert einen **PWM-geregelten Lüfter** (z. B. Noctua NF-A4x10/20 5V PWM) und einen **aktiven Buzzer** auf einem Raspberry Pi 5. Der Lüfter wird temperaturabhängig geregelt, der Buzzer warnt bei Überhitzung.
+
+---
+
+## 🔧 Hardware-Anschluss
+
+### 🌀 Lüfter (z. B. Noctua NF-A4x10/20 5V PWM)
+
+| Lüfterkabel | Funktion         | Raspberry Pi Pin       |
+|-------------|------------------|-------------------------|
+| Rot         | +5 V             | Pin 2 oder 4 (5 V)      |
+| Schwarz     | GND              | Pin 6 (GND)             |
+| Blau        | PWM-Steuerung    | Pin 33 (GPIO13 / BCM 13)|
+| Gelb        | Tach (optional)  | *nicht anschließen*     |
+
+> ⚠️ **Hinweis:** Der Lüfter muss direkt von den 5 V-Pins versorgt werden, **nicht vom GPIO!**
+
+---
+
+### 🔊 Aktiver Buzzer (5 V, aktiv)
+
+| Buzzerkabel | Funktion | Raspberry Pi Pin         |
+|-------------|----------|---------------------------|
+| +           | Signal   | Pin 37 (GPIO26 / BCM 26)  |
+| –           | GND      | Pin 39 (GND)              |
+
+---
