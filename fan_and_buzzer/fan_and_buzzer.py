@@ -1,3 +1,4 @@
+# /usr/local/bin/fan_and_buzzer.py
 import time
 import RPi.GPIO as GPIO
 
