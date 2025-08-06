@@ -1,0 +1,21 @@
+[Unit]
+Description=Raspberry Pi 5 Thermal Controller
+After=multi-user.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=root
+Group=root
+ExecStart=/usr/bin/python3 /usr/local/bin/pi5-thermal-control.py
+StandardOutput=journal
+StandardError=journal
+
+# Resource Limits
+MemoryMax=64M
+CPUQuota=10%
+
+[Install]
+WantedBy=multi-user.target
